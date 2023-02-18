@@ -179,73 +179,7 @@ def PPIPrediction(embedding_look_up, original_graph, train_graph,G0, test_pos_ed
         f.write(str(np.std(prcsum)))
 
 
-        '''csv_writer = csv.writer(f)
-        for edge in test_neg_edges:  # 对于测试集里的负例，标签为0，如果分类结果是1，说明前后分类不一样了
-            node_u_emb = embedding_look_up[edge[0]]
-            node_v_emb = embedding_look_up[edge[1]]
-            feature_vector = np.append(node_u_emb, node_v_emb)
-            if feature_vector in X_folds[i]:
-               if clf.predict([feature_vector]) != 0:
-                   print("结果不一致的边：")
-                   print(edge[0])
-                   print(edge[1])
-                   csv_writer.writerow([edge[0], edge[1]])
-
-        f.close()'''
-
-    '''#创建一个新文件，存放可能的新预测的边
-    f = open('predict_PPI.csv', 'w', encoding='utf-8')
-    csv_writer = csv.writer(f)
-    for edge in test_neg_edges:#对于测试集里的负例，标签为0，如果分类结果是1，说明前后分类不一样了
-        node_u_emb = embedding_look_up[edge[0]]
-        node_v_emb = embedding_look_up[edge[1]]
-        feature_vector = np.append(node_u_emb, node_v_emb)
-        if clf.predict([feature_vector]) != 0:
-            print("结果不一致的边：")
-            print(edge[0])
-            print(edge[1])
-            csv_writer.writerow([edge[0], edge[1]])
-    f.close()
-    score = accuracy_score(y_test, test_predict)
-    print("The accruacy score is %f" % score)
-
-    X=np.concatenate((X_train,X_test))#为了方便交叉验证，重新生成X，y，之前的X_train,X_test好像是直接从图上生成的
-    print(X.shape)
-    y=np.concatenate((y_train,y_test))
-    print(y.shape)
-    c = list(zip(X, y))
-    random.shuffle(c)
-    X, y= zip(*c)#给X,y打乱顺序
-
-
-    #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=0)#交叉验证
-    #KF = KFold(n_splits=10, random_state=7, shuffle=True)
-    folds=10#分为5折
-    X_folds = []
-    y_folds = []
-    X_folds = np.array_split(X, folds)
-    y_folds = np.array_split(y, folds)
-    #k_choices = [1, 3, 5, 7, 9, 13, 15, 20, 25]
-    accuracy_of_k = {}
-    scores=[]
-    #for k in k_choices:
-        #accuracy_of_k[k] = []
-    # split the train sets and validation sets
-   for i in range(folds):#开始10折交叉验证
-        X_train = np.vstack(X_folds[:i] + X_folds[i + 1:])#每次把第i个当作测试集
-        X_val = X_folds[i]
-        y_train = np.hstack(y_folds[:i] + y_folds[i + 1:])
-        y_val = y_folds[i]
-
-        clf = svm.SVC()  # svm class
-        clf.fit(X_train, y_train)  # training the svc model
-        print('Start predicting...')
-        test_predict = clf.predict(X_val)
-        score = accuracy_score(y_val, test_predict)#
-        print(score)
-        scores.append(score)
-    print(np.mean(scores))'''
-
+       
 
 
 
