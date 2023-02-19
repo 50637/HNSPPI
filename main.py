@@ -15,17 +15,13 @@ def parse_args():
     parser.add_argument('--output',
                         help='embedding file', required=True)
     parser.add_argument('--number-walks', default=32, type=int,
-                        help='Number of random walks to start at each node. '
-                             'Only for random walk-based methods: DeepWalk, node2vec, struc2vec')
+                        help='Number of random walks to start at each node. ')
     parser.add_argument('--walk-length', default=64, type=int,
-                        help='Length of the random walk started at each node. '
-                             'Only for random walk-based methods: DeepWalk, node2vec, struc2vec')
+                        help='Length of the random walk started at each node. ')
     parser.add_argument('--workers', default=8, type=int,
-                        help='Number of parallel processes. '
-                             'Only for random walk-based methods: DeepWalk, node2vec, struc2vec')
+                        help='Number of parallel processes. ')
     parser.add_argument('--window-size', default=10, type=int,
-                        help='Window size of word2vec model. '
-                             'Only for random walk-based methods: DeepWalk, node2vec, struc2vec')
+                        help='Window size of word2vec model. ')
     parser.add_argument('--seed',default=0, type=int,  help='seed value')
     args = parser.parse_args()
 
