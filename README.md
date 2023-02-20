@@ -9,10 +9,11 @@ utils.py - This scripts are used to prepare features of proteins.
 evaluation.py script is used to evalutate the performance of our method.
 
 Running:
-Download the data file from http://cdsic.njau.edu.cn/data/PPIDataBankV1.0
-run main.py script with --input1 <positive edgelist> --input2 <negative edgelist> --output <output file> --seed <seed>
-for example:python main.py --input1 data/mouse/mouse_pos.edgelist --input2 data/mouse/mouse_neg.edgelist --output embeddings/mouse --seed 0
-See the results in results.tsv file
+Download the data file from http://cdsic.njau.edu.cn/data/PPIDataBankV1.0.
+run main.py script with --input1 <positive edgelist> --input2 <negative edgelist> --output <output file> --seed <seed>.
+for example:python main.py --input1 data/mouse/mouse_pos.edgelist --input2 data/mouse/mouse_neg.edgelist --output embeddings/mouse --seed 0.
+See the results in results.tsv file.
+OpenNE packages is downloaded from https://github.com/thunlp/OpenNE.
 
 Datasets
 This dataset includes sequence information and interaction information of 6 species.
