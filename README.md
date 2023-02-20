@@ -15,7 +15,7 @@ for example:python main.py --input1 data/mouse/mouse_pos.edgelist --input2 data/
 See the results in results.tsv file.
 The complete OpenNE packages is downloaded from https://github.com/thunlp/OpenNE.
 
-Datasets
+Datasets：
 This dataset includes sequence information and interaction information of 6 species.
 ## Sharing/access Information
 Links to other publicly accessible locations of the data:
